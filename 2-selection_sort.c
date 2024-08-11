@@ -15,12 +15,11 @@ void selection_sort(int *array, size_t size)
 		for (i = 0; i < size; i++)
 		{
 			boolean = 0;
-			for (v = i + 1; v < size; v++)
+			for (v = i + 1; array[i] < array[v]; v++)
 			{
-				if (array[i] < array[v])
-					boolean = 1;
+				boolean = 1;
 			}
-			if (boolean == 1)
+			if (boolean > 0)
 				continue;
 			aux = array[i];
 			for (v = i + 1; v < size; v++)
