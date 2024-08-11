@@ -8,12 +8,20 @@
 void selection_sort(int *array, size_t size)
 {
 	size_t i, v;
-	int aux, saux;
+	int aux, saux, boolean;
 
 	if (array && size)
 	{
 		for (i = 0; i < size; i++)
 		{
+			boolean = 0;
+			for (v = i + 1; v < size; v++)
+			{
+				if (array[i] < array[v])
+					boolean = 1;
+			}
+			if (boolean == 1)
+				continue;
 			aux = array[i];
 			for (v = i + 1; v < size; v++)
 			{
